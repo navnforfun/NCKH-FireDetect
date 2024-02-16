@@ -15,10 +15,11 @@ box_annotator = sv.BoxAnnotator(thickness=1, text_thickness=1, text_scale=0.5)
 while True:
     time_now = time.time() - start_time
     print(time_now)
-    if((time_now - my_time ) <1):
-        ret,frame = cap.read()
-        print("bo qua. time skip: " , (time_now - my_time ))
-        continue
+    # Skip frame
+    # if((time_now - my_time ) <1):
+    #     ret,frame = cap.read()
+    #     print("bo qua. time skip: " , (time_now - my_time ))
+    #     continue
     my_time = time_now
     ret,frame = cap.read()
     result = model(frame,agnostic_nms=True)[0]

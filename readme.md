@@ -1,0 +1,1 @@
+https://app.roboflow.com/vn-na-7glre/firedetection_ver2/2
