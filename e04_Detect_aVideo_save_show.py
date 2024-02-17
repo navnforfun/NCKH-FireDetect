@@ -3,7 +3,7 @@ import random
 import cv2
 import numpy as np
 from ultralytics import YOLO
-import pafy
+# import pafy
 # opening the file in read mode
 my_file = open("./coco.txt", "r")
 # reading the file
@@ -23,7 +23,7 @@ for i in range(len(class_list)):
     detection_colors.append((b, g, r))
 
 # load a pretrained YOLOv8n model
-model = YOLO("./best.pt", "v8")
+model = YOLO("./model_v2.pt", "v8")
 
 # Vals to resize video frames | small frame optimise the run
 frame_wid = 640
@@ -40,7 +40,7 @@ frame_hyt = 480
 # video = pafy.new(url)
 # best = video.getbest(preftype="mp4")
 # # Create a VideoCapture object.
-cap = cv2.VideoCapture("./Data/fire4.mp4")
+cap = cv2.VideoCapture("./Data/fire6.mp4")
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
@@ -58,7 +58,7 @@ while True:
     # frame = cv2.resize(frame, (frame_wid, frame_hyt))
 
     # Predict on image
-    detect_params = model.predict(source=[frame], conf=0.2, save=True)
+    detect_params = model.predict(source=[frame], conf=0.2)
 
     # Convert tensor array to numpy
     DP = detect_params[0].numpy()
