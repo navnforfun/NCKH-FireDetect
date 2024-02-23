@@ -5,12 +5,13 @@
 # !pip install roboflow
 
 # data
-# pip install roboflow
+# !pip install roboflow
 
 from roboflow import Roboflow
-rf = Roboflow(api_key="uV5DXGq1taccB670YFNP")
+rf = Roboflow(api_key="mSXH4RQO2rxJMSZmPMQ5")
 project = rf.workspace("vn-na-7glre").project("firedetection_ver2")
-dataset = project.version(3).download("yolov8")
+dataset = project.version(4).download("yolov8")
+
 
 # from ultralytics import YOLO
  
