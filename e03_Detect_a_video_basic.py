@@ -9,8 +9,8 @@ from ultralytics import  YOLO
 import  cv2
 import supervision as sv
 import numpy as np
-model  = YOLO('./model_v3.pt')
-VIDEO_PATH = r"C:\Users\Administrator\Documents\python\NCKH_FireDetect\Data\fire8.mp4"
+model  = YOLO('./model_v4.pt')
+VIDEO_PATH = r"C:\Users\Administrator\Documents\python\NCKH_FireDetect\Data\fire7.mp4"
 SAVE_FILE = r"runs\results\fire6_v3.mp4"
 # old
 # results = model.predict(r'C:\Users\Administrator\Documents\python\NCKH_FireDetect\Data\fire6.mp4',show=True,save = True, save_txt = True)
