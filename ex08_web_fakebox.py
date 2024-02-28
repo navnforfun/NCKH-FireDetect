@@ -6,13 +6,13 @@ from ultralytics import YOLO
 import supervision as sv
 import time
 
-model = YOLO('best.pt')
+model = YOLO('model_v8.pt')
 app = Flask(__name__)
 
 # cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture("http://192.168.1.228:81/stream")
 # cap = cv2.VideoCapture("http://192.168.1.241:4747/video")
-model = YOLO("best.pt")
+# model = YOLO("best.pt")
 box_annotator = sv.BoxAnnotator(thickness=1, text_thickness=1, text_scale=0.5)
 
 
@@ -20,7 +20,7 @@ box_annotator = sv.BoxAnnotator(thickness=1, text_thickness=1, text_scale=0.5)
 
 
 def gen_frames():  # generate frame by frame from camera
-    cap = cv2.VideoCapture("http://192.168.1.241:4747/video")
+    cap = cv2.VideoCapture("http://192.168.0.106:4747/video")
     # cap.release()
     # cap = cv2.VideoCapture("http://192.168.1.241:4747/video")
     # cap = cv2.VideoCapture(0)
@@ -35,7 +35,7 @@ def gen_frames():  # generate frame by frame from camera
         time_now = time.time() - start_time
         print(time_now)
         
-        if((time_now - my_time ) <1.5):
+        if((time_now - my_time ) <2):
             print("bo qua. time skip: " , (time_now - my_time ))
         else:
             print("===detect===")
